@@ -4,24 +4,23 @@ import { AiOutlineFrown, AiOutlineCloseCircle } from 'react-icons/ai'
 const Hero = ({ toggleAlert, alert }) => {
   return (
     <div className=' container mx-auto px-4 max-w-screen-lg '>
-      <h1 className='text-6xl font-bold text-center pt-20 md:pt-40 max-w-4xl mx-auto'>
+      <h1 className='text-6xl font-bold text-center pt-20 md:pt-40 max-w-4xl mx-auto '>
         Unique custom gradients for your all modern designs
       </h1>
-      <p className=' mt-8 mx-auto text-center font-light max-w-xl leading-7'>
+      <p className='  mx-auto text-center font-light max-w-xl py-10 leading-7'>
         Brows through out vast source of meshes and gradients you can use on
         your porject designs. If your feeling more hands on,
         <a href='#' className='font-bold text-orange'>
-          {' '}
           create your own!
         </a>
       </p>
-      <div className='flex-initial  text-center sm:space-x-6'>
-        <button className='bg-black  text-white px-7 py-3 rounded-md  mx-auto mt-7 hover:bg-blackLight w-[80%] sm:w-auto'>
+      <div className='flex-initial space-y-4 sm:space-y-0 text-center sm:space-x-6 sm:mt-7'>
+        <button className=' font-bold bg-black  text-white px-7 h-[50px] rounded-md  mx-auto  hover:bg-blackLight w-[80%] sm:w-auto'>
           Gradients
         </button>
         <button
           onClick={toggleAlert}
-          className='border-2 border-solid border-black text-black px-7 py-3 rounded-md  mx-auto mt-4 sm:mt-7 hover:bg-gray-100 w-[80%] sm:w-auto'
+          className='font-bold border-2 border-solid border-black text-black px-7 h-[50px] rounded-md  mx-auto  hover:bg-gray-100 w-[80%] sm:w-auto'
         >
           Build Your Own
         </button>
