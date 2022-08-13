@@ -3,10 +3,12 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Saved from './components/Saved'
 import Hero from './components/Hero'
+import Main from './components/Main'
 
 function App() {
   const [saved, setSaved] = useState(false)
   const [alert, setAlert] = useState(false)
+  const [filter, setFilter] = useState(false)
 
   function toggleSaved() {
     setSaved((prev) => !prev)
@@ -14,12 +16,19 @@ function App() {
   function toggleAlert() {
     setAlert((prev) => !prev)
   }
+  function toggleFilter() {
+    setFilter((prev) => !prev)
+  }
+
   return (
     <div className='App bg-main-bg'>
+      {/* Nav / Hero */}
       <Navbar toggleSaved={toggleSaved} />
-      {saved && <Saved toggleSaved={toggleSaved} />}
-      {/* hero */}
-      <Hero alert={alert} toggleAlert={toggleAlert} />
+      {saved && <Saved toggleSaved={toggleSaved} isSave={saved} />}
+      <Hero toggleAlert={toggleAlert} isAlert={alert} />
+
+      {/* Main */}
+      <Main isFilter={filter} toggleFilter={toggleFilter} />
     </div>
   )
 }

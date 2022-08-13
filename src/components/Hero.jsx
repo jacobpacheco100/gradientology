@@ -1,10 +1,10 @@
 import React from 'react'
 import { AiOutlineFrown, AiOutlineCloseCircle } from 'react-icons/ai'
 
-const Hero = ({ toggleAlert, alert }) => {
+const Hero = ({ toggleAlert, isAlert }) => {
   return (
-    <div className=' container mx-auto px-4 max-w-screen-lg '>
-      <h1 className='text-6xl font-bold text-center pt-20 md:pt-40 max-w-4xl mx-auto '>
+    <div className=' container mx-auto pt-20 md:pt-40 pb-40 md:pb-80  max-w-screen-lg '>
+      <h1 className='text-6xl font-bold text-center max-w-4xl mx-auto '>
         Unique custom gradients for your all modern designs
       </h1>
       <p className='  mx-auto text-center font-light max-w-xl py-10 leading-7'>
@@ -27,23 +27,25 @@ const Hero = ({ toggleAlert, alert }) => {
       </div>
 
       {/* popup */}
-      {alert && (
-        <div className='w-full max-w-[561px] h-[345px] absolute top-60 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-white rounded-lg drop-shadow-xl flex items-center justify-center flex-col '>
-          <AiOutlineFrown className='text-4xl mb-4' />
-          <AiOutlineCloseCircle
-            onClick={toggleAlert}
-            className='text-2xl text-red-500 absolute top-4 right-4'
-          />
-          <h3 className='font-bold text-lg'>" Build Your Own "</h3>
-          <p className='max-w-[388px] py-4 text-center text-body'>
-            Is currently in developement. In the meantime i highly recomend this
-            website
-          </p>
-          <a className='font-bold text-blue-300 text-blue' href='#'>
-            https://meshgradient.com/
-          </a>
-        </div>
-      )}
+
+      <div
+        className={`w-[90%] max-w-[561px]  flex flex-col items-center bg-white absolute left-1/2 transform -translate-x-1/2 py-10 rounded-lg shadow-md ease-in-out duration-300
+        ${isAlert ? ' translate-y-[-450px]' : ' translate-y-[-1000px]'}`}
+      >
+        <AiOutlineFrown className='text-4xl mb-4' />
+        <AiOutlineCloseCircle
+          onClick={toggleAlert}
+          className='text-2xl text-red-500 absolute top-4 right-4'
+        />
+        <h3 className='font-bold text-lg'>" Build Your Own "</h3>
+        <p className='max-w-[388px] py-4 text-center text-body'>
+          Is currently in developement. In the meantime i highly recomend this
+          website
+        </p>
+        <a className='font-bold text-blue-300 text-blue' href='#'>
+          https://meshgradient.com/
+        </a>
+      </div>
     </div>
   )
 }
