@@ -7,6 +7,8 @@ module.exports = {
         orange: '#FF9F47',
         black: '#0B1121',
         blackLight: '#363F57',
+        blue: '#3ABCFF',
+        body: '#9297A4',
       },
       fontSize: {
         14: '14px',

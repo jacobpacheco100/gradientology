@@ -21,7 +21,7 @@ const Navbar = ({ toggleSaved }) => {
         </button>
 
         <a
-          href='#'
+          href='https://github.com/jacobpacheco100/gradientology'
           className='bg-black text-white h-[50px] px-3 rounded-2xl flex items-center text-2xl'
         >
           <AiFillGithub />
