@@ -15,7 +15,7 @@ const Navbar = ({ toggleSaved }) => {
       <div className='flex space-x-4 '>
         <button
           onClick={toggleSaved}
-          className='border-solid border-black border-1 h-[50px] px-5 rounded-lg flex items-center hover:font-bold hover:bg-red-500 hover:text-white hover:border-red-500 ease-in duration-100'
+          className='border-solid border-black border-1 h-[50px] px-5 rounded-lg flex items-center hover:font-bold hover:bg-red hover:text-white hover:border-red ease-in duration-100'
         >
           <span className='mr-2'>Saved</span> <AiOutlineHeart />
         </button>

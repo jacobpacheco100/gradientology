@@ -8,6 +8,7 @@ const Main = ({ isFilter, toggleFilter }) => {
   const cards = data.map((card) => {
     return (
       <GradientCard
+        key={card.id}
         gradient={card.gradient}
         name={card.name}
         color1={card.colors[0]}

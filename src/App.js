@@ -5,6 +5,7 @@ import Saved from './components/Saved'
 import Hero from './components/Hero'
 import Main from './components/Main'
 import Footer from './components/Footer'
+import data from './gradientCardsData.json'
 
 function App() {
   const [saved, setSaved] = useState(false)

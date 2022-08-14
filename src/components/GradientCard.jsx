@@ -1,8 +1,13 @@
 import React from 'react'
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 
-const GradientCard = ({ gradient, name, color1, color2, color3 }) => {
+const GradientCard = ({ gradient, name, color1, color2, color3, isSaved }) => {
   return (
-    <div className=' shadow-md rounded-b-xl'>
+    <div className=' shadow-md rounded-b-xl w-full relative group'>
+      {/* save button */}
+      <button className='absolute z-10 top-4 right-4 p-2 bg-white rounded-full text-red shadow-md hidden group-hover:block'>
+        {isSaved ? <AiFillHeart /> : <AiOutlineHeart />}
+      </button>
       {/* gradient img */}
       <div className='w-full h-80 overflow-hidden relative '>
         <a

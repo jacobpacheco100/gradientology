@@ -9,6 +9,7 @@ module.exports = {
         blackLight: '#363F57',
         blue: '#3ABCFF',
         body: '#9297A4',
+        red: '#F04040',
         // gradient card colors
         filterRed: '#F04040',
         filterOrange: '#FDBC5B',
