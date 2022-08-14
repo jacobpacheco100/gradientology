@@ -1,10 +1,10 @@
 import React from 'react'
 
-const GradientCard = ({ gradient, name, color1, color2, color3 }) => {
+const SavedGradientCard = ({ gradient, name, color1, color2, color3 }) => {
   return (
-    <div className=' shadow-md rounded-b-xl'>
+    <div className=' shadow-md rounded-b-md '>
       {/* gradient img */}
-      <div className='w-full h-80 overflow-hidden relative '>
+      <div className='w-full h-40 overflow-hidden relative '>
         <a
           href={gradient}
           target='_blank'
@@ -16,9 +16,9 @@ const GradientCard = ({ gradient, name, color1, color2, color3 }) => {
         ></a>
       </div>
       {/* bottom tab */}
-      <div className=' rounded-b-xl h-[40px] bg-white flex items-center justify-between px-4 '>
+      <div className=' rounded-b-md h-[30px] bg-white flex items-center justify-between px-4 '>
         {/* name */}
-        <h1 className='text-sm text-body font-bold '>{name}</h1>
+        <h1 className='text-xs text-body font-bold '>{name}</h1>
         {/* color pallet */}
         <div className='flex space-x-2'>
           <div
@@ -39,4 +39,4 @@ const GradientCard = ({ gradient, name, color1, color2, color3 }) => {
   )
 }
 
-export default GradientCard
+export default SavedGradientCard

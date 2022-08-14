@@ -15,12 +15,12 @@ const Hero = ({ toggleAlert, isAlert }) => {
         </a>
       </p>
       <div className='flex-initial space-y-4 sm:space-y-0 text-center sm:space-x-6 sm:mt-7'>
-        <button className=' font-bold bg-black  text-white px-7 h-[50px] rounded-md  mx-auto  hover:bg-blackLight w-[80%] sm:w-auto ease-in duration-150'>
+        <button className=' font-bold bg-black  text-white px-7 h-[50px] rounded-md  mx-auto  hover:bg-blackLight w-[80%] sm:w-auto ease-in duration-100'>
           Gradients
         </button>
         <button
           onClick={toggleAlert}
-          className='font-bold border-2 border-solid border-black text-black px-7 h-[50px] rounded-md  mx-auto  hover:bg-blue w-[80%] sm:w-auto ease-in duration-150'
+          className='font-bold border-2 border-solid border-black text-black px-7 h-[50px] rounded-md  mx-auto  hover:bg-blue w-[80%] sm:w-auto ease-in duration-100'
         >
           Build Your Own
         </button>
