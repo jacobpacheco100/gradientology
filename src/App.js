@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Saved from './components/Saved'
 import Hero from './components/Hero'
 import Main from './components/Main'
+import Footer from './components/Footer'
 
 function App() {
   const [saved, setSaved] = useState(false)
@@ -21,14 +22,15 @@ function App() {
   }
 
   return (
-    <div className='App bg-main-bg'>
+    <div className='App bg-main-bg overflow-x-hidden '>
       {/* Nav / Hero */}
       <Navbar toggleSaved={toggleSaved} />
-      {saved && <Saved toggleSaved={toggleSaved} isSave={saved} />}
+      <Saved toggleSaved={toggleSaved} isSave={saved} />
       <Hero toggleAlert={toggleAlert} isAlert={alert} />
 
       {/* Main */}
       <Main isFilter={filter} toggleFilter={toggleFilter} />
+      <Footer />
     </div>
   )
 }

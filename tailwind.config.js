@@ -9,6 +9,13 @@ module.exports = {
         blackLight: '#363F57',
         blue: '#3ABCFF',
         body: '#9297A4',
+        // gradient card colors
+        filterRed: '#F04040',
+        filterOrange: '#FDBC5B',
+        filterGreen: '#6FED43',
+        filterCyan: '#30F9E1',
+        filterBlue: '#4A64ED',
+        filterPurple: '#F13DF4',
       },
       fontSize: {
         14: '14px',

@@ -7,7 +7,7 @@ const Hero = ({ toggleAlert, isAlert }) => {
       <h1 className='text-6xl font-bold text-center max-w-4xl mx-auto '>
         Unique custom gradients for your all modern designs
       </h1>
-      <p className='  mx-auto text-center font-light max-w-xl py-10 leading-7'>
+      <p className='  mx-auto text-center font-medium text-body max-w-xl py-10 leading-7'>
         Brows through out vast source of meshes and gradients you can use on
         your porject designs. If your feeling more hands on,
         <a href='#' className='font-bold text-orange'>
@@ -15,12 +15,12 @@ const Hero = ({ toggleAlert, isAlert }) => {
         </a>
       </p>
       <div className='flex-initial space-y-4 sm:space-y-0 text-center sm:space-x-6 sm:mt-7'>
-        <button className=' font-bold bg-black  text-white px-7 h-[50px] rounded-md  mx-auto  hover:bg-blackLight w-[80%] sm:w-auto'>
+        <button className=' font-bold bg-black  text-white px-7 h-[50px] rounded-md  mx-auto  hover:bg-blackLight w-[80%] sm:w-auto ease-in duration-150'>
           Gradients
         </button>
         <button
           onClick={toggleAlert}
-          className='font-bold border-2 border-solid border-black text-black px-7 h-[50px] rounded-md  mx-auto  hover:bg-gray-100 w-[80%] sm:w-auto'
+          className='font-bold border-2 border-solid border-black text-black px-7 h-[50px] rounded-md  mx-auto  hover:bg-blue w-[80%] sm:w-auto ease-in duration-150'
         >
           Build Your Own
         </button>
@@ -30,7 +30,7 @@ const Hero = ({ toggleAlert, isAlert }) => {
 
       <div
         className={`w-[90%] max-w-[561px]  flex flex-col items-center bg-white absolute left-1/2 transform -translate-x-1/2 py-10 rounded-lg shadow-md ease-in-out duration-300
-        ${isAlert ? ' translate-y-[-450px]' : ' translate-y-[-1000px]'}`}
+        ${isAlert ? ' translate-y-[-450px]' : ' translate-y-[-1400px]'}`}
       >
         <AiOutlineFrown className='text-4xl mb-4' />
         <AiOutlineCloseCircle

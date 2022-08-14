@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.zoom {
+  transition: ease-in-out all 0.3s;
+}
+.zoom:hover {
+  background-size: 120%;
+}

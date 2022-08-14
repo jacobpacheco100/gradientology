@@ -4,7 +4,7 @@ import { AiFillHeart, AiOutlineClose } from 'react-icons/ai'
 const Saved = ({ toggleSaved, isSave }) => {
   return (
     <aside
-      className={`ease-in-out duration-300 absolute top-0 right-0 w-full md:w-[721px] h-[1000px] bg-white drop-shadow-lg ${
+      className={`fixed ease-in-out duration-300  top-0 right-0 w-full md:w-[721px] h-[1000px] bg-white drop-shadow-lg ${
         isSave ? ' translate-x-0' : 'translate-x-full'
       }`}
     >

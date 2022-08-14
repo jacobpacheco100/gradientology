@@ -1,7 +1,9 @@
 import React from 'react'
 
-const ColorSwatch = () => {
-  return <div className='rounded-full h-5 w-5 bg-gray-500'></div>
+const ColorSwatch = ({ color }) => {
+  return (
+    <div className={`rounded-full h-5 w-5`} style={{ background: color }}></div>
+  )
 }
 
 export default ColorSwatch
