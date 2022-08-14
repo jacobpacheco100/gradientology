@@ -22,6 +22,10 @@ function App() {
     setFilter((prev) => !prev)
   }
 
+  function log(id) {
+    console.log(`item ${id}`)
+  }
+
   return (
     <div className='App bg-main-bg overflow-x-hidden '>
       {/* Nav / Hero */}
@@ -30,7 +34,7 @@ function App() {
       <Hero toggleAlert={toggleAlert} isAlert={alert} />
 
       {/* Main */}
-      <Main isFilter={filter} toggleFilter={toggleFilter} />
+      <Main isFilter={filter} toggleFilter={toggleFilter} handleSave={log} />
       <Footer />
     </div>
   )
