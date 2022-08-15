@@ -24,14 +24,32 @@ function App() {
 
   // saved gradients
 
-  const [saved, setSaved] = useState([])
+  const [saved, setSaved] = useState([
+    {
+      id: '2',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/03.-Snowy-Mint_1.jpg',
+      name: 'Snowy Mint',
+      colors: ['gray', 'gray', 'gray'],
+    },
+  ])
 
   function log(id) {
-    const card = data[id]
-    setSaved((prev) => [...prev, card])
+    let card
+    for (let i = 0; i < saved.length; i++) {
+      if (id === saved[i].id) {
+        console.log(id)
+        console.log('nothing')
+      } else {
+        card = data[id]
+        setSaved((prev) => [...prev, card])
+      }
+    }
+
+    // if id == id of any object in data => do nothing, else card = data[id]
   }
 
-  console.log(saved)
+  // console.log(saved)
 
   return (
     <div className='App bg-main-bg overflow-x-hidden '>
