@@ -3,10 +3,9 @@ import { AiFillHeart, AiOutlineClose } from 'react-icons/ai'
 import SavedGradientCard from './SavedGradientCard'
 
 // placeholder
-import data from '../gradientCardsData.json'
 
-const Saved = ({ toggleSaved, isSave }) => {
-  const saved = data.map((card) => {
+const Saved = ({ toggleSaved, isSave, savedGradients }) => {
+  const saved = savedGradients.map((card) => {
     return (
       <SavedGradientCard
         gradient={card.gradient}
@@ -35,7 +34,7 @@ const Saved = ({ toggleSaved, isSave }) => {
       </div>
 
       {/* saved gradients... */}
-      <div className='px-10 w-full grid grid-cols-2 gap-7'></div>
+      <div className='px-10 w-full grid grid-cols-2 gap-7'>{saved}</div>
     </aside>
   )
 }

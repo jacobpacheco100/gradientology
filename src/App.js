@@ -8,12 +8,12 @@ import Footer from './components/Footer'
 import data from './gradientCardsData.json'
 
 function App() {
-  const [saved, setSaved] = useState(false)
+  const [showSaved, setShowSaved] = useState(false)
   const [alert, setAlert] = useState(false)
   const [filter, setFilter] = useState(false)
 
   function toggleSaved() {
-    setSaved((prev) => !prev)
+    setShowSaved((prev) => !prev)
   }
   function toggleAlert() {
     setAlert((prev) => !prev)
@@ -22,15 +22,26 @@ function App() {
     setFilter((prev) => !prev)
   }
 
+  // saved gradients
+
+  const [saved, setSaved] = useState([])
+
   function log(id) {
-    console.log(`item ${id}`)
+    const card = data[id]
+    setSaved((prev) => [...prev, card])
   }
+
+  console.log(saved)
 
   return (
     <div className='App bg-main-bg overflow-x-hidden '>
       {/* Nav / Hero */}
       <Navbar toggleSaved={toggleSaved} />
-      <Saved toggleSaved={toggleSaved} isSave={saved} />
+      <Saved
+        toggleSaved={toggleSaved}
+        isSave={showSaved}
+        savedGradients={saved}
+      />
       <Hero toggleAlert={toggleAlert} isAlert={alert} />
 
       {/* Main */}

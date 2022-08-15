@@ -1,5 +1,11 @@
 [
   {
+    "id": "0",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/07.-Tidal.jpg",
+    "name": "Cotton Candy",
+    "colors": ["gray", "gray", "gray"]
+  },
+  {
     "id": "1",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/02.-Egg-Sour.jpg",
     "name": "Cotton Candy",
@@ -27,12 +33,6 @@
     "id": "5",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/03.-Snowy-Mint_1.jpg",
     "name": "Snowy Mint",
-    "colors": ["gray", "gray", "gray"]
-  },
-  {
-    "id": "6",
-    "gradient": "https://products.ls.graphics/mesh-gradients/images/07.-Tidal.jpg",
-    "name": "Cotton Candy",
     "colors": ["gray", "gray", "gray"]
   }
 ]
