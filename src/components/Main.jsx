@@ -4,7 +4,7 @@ import ColorSwatch from './ColorSwatch'
 import GradientCard from './GradientCard'
 import data from '../gradientCardsData.json'
 
-const Main = ({ handleSave }) => {
+const Main = ({ handleSave, unSave }) => {
   const cards = data.map((card) => {
     return (
       <GradientCard
@@ -15,6 +15,7 @@ const Main = ({ handleSave }) => {
         color2={card.colors[1]}
         color3={card.colors[2]}
         handleSave={handleSave}
+        unSave={unSave}
         id={card.id}
       />
     )

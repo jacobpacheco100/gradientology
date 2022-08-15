@@ -9,6 +9,7 @@ const GradientCard = ({
   color3,
   isSaved,
   handleSave,
+  unSave,
   id,
 }) => {
   return (
@@ -17,6 +18,13 @@ const GradientCard = ({
       <button
         onClick={() => handleSave(`${id}`)}
         className='absolute z-10 top-4 right-4 p-2 bg-white rounded-full text-red shadow-md hidden group-hover:block'
+      >
+        {isSaved ? <AiFillHeart /> : <AiOutlineHeart />}
+      </button>
+
+      <button
+        onClick={() => unSave(`${id}`)}
+        className='absolute z-10 top-20 right-4 p-2 bg-white rounded-full text-red shadow-md hidden group-hover:block'
       >
         {isSaved ? <AiFillHeart /> : <AiOutlineHeart />}
       </button>

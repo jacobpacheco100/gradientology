@@ -4,7 +4,7 @@ import logo from '../images/logo.png'
 
 const Navbar = ({ toggleSaved }) => {
   return (
-    <nav className='flex w-full items-center px-4 md:px-10 xl:px-20 justify-between py-4'>
+    <nav className=' flex w-full items-center px-4 md:px-10 xl:px-20 justify-between h-20'>
       <div className='flex'>
         <h3 className='font-bold flex items-center'>
           <img className='mr-3 w-7' src={logo} alt='logo' />
@@ -12,10 +12,10 @@ const Navbar = ({ toggleSaved }) => {
         </h3>
       </div>
 
-      <div className='flex space-x-4 '>
+      <div className='fixed z-20  right-10 flex space-x-4 '>
         <button
           onClick={toggleSaved}
-          className='border-solid border-black border-1 h-[50px] px-5 rounded-lg flex items-center hover:font-bold hover:bg-red hover:text-white hover:border-red ease-in duration-100'
+          className='border-solid border-black border-1 bg-main-bg h-[50px] px-5 rounded-lg flex items-center hover:font-bold hover:bg-red hover:text-white hover:border-red ease-in duration-100'
         >
           <span className='mr-2'>Saved</span> <AiOutlineHeart />
         </button>

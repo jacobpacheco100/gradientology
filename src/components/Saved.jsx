@@ -16,9 +16,10 @@ const Saved = ({ toggleSaved, isSave, savedGradients }) => {
       />
     )
   })
+
   return (
     <aside
-      className={` z-20 fixed ease-in-out duration-300  top-0 right-0 w-full md:w-[721px] h-[1000px] bg-white drop-shadow-lg ${
+      className={` z-20 fixed ease-in-out duration-300  top-0 right-0 w-full md:w-[721px] h-full bg-white drop-shadow-lg overflow-scroll ${
         isSave ? ' translate-x-0' : 'translate-x-full'
       }`}
     >
