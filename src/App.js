@@ -36,16 +36,8 @@ function App() {
 
   function save(id) {
     let card
-    for (let i = 0; i < saved.length; i++) {
-      if (id === saved[i].id) {
-        // do nothing | test
-        console.log(id)
-        console.log('nothing')
-      } else {
-        card = data[id]
-        setSaved((prev) => [...prev, card])
-      }
-    }
+    card = data[id]
+    setSaved((prev) => [...prev, card])
 
     // if id == id of any object in data => do nothing, else card = data[id]
   }
