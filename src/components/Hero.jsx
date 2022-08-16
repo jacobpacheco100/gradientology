@@ -8,10 +8,13 @@ const Hero = ({ toggleAlert, isAlert, scroll }) => {
         Unique custom gradients for your all modern designs
       </h1>
       <p className='  mx-auto text-center font-medium text-body max-w-xl py-10 leading-7'>
-        Brows through out vast source of meshes and gradients you can use on
+        Browse through our vast source of meshes and gradients you can use on
         your porject designs. If your feeling more hands on,
-        <a href='#' className='font-bold text-orange'>
-          create your own!
+        <a
+          onClick={toggleAlert}
+          className='font-bold text-orange hover:underline hover:cursor-pointer'
+        >
+          {' create your own!'}
         </a>
       </p>
       <div className='flex-initial space-y-4 sm:space-y-0 text-center sm:space-x-6 sm:mt-7'>
@@ -32,13 +35,13 @@ const Hero = ({ toggleAlert, isAlert, scroll }) => {
       {/* popup */}
 
       <div
-        className={`w-[90%] max-w-[561px]  flex flex-col items-center bg-white absolute left-1/2 transform -translate-x-1/2 py-10 rounded-lg shadow-md ease-in-out duration-300
+        className={`w-[90%] max-w-[561px] fixed z-10  flex flex-col items-center bg-white  left-1/2 transform -translate-x-1/2 py-10 rounded-lg shadow-md ease-in-out duration-300
         ${isAlert ? ' translate-y-[-450px]' : ' translate-y-[-1400px]'}`}
       >
         <AiOutlineFrown className='text-4xl mb-4' />
         <AiOutlineCloseCircle
           onClick={toggleAlert}
-          className='text-2xl text-red-500 absolute top-4 right-4'
+          className='text-2xl text-red-500 absolute top-4 right-4 hover:cursor-pointer'
         />
         <h3 className='font-bold text-lg'>" Build Your Own "</h3>
         <p className='max-w-[388px] py-4 text-center text-body'>

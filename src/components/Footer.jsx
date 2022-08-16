@@ -2,13 +2,13 @@ import React from 'react'
 import logo from '../images/logo-dark.png'
 import { AiFillGithub } from 'react-icons/ai'
 
-const Footer = () => {
+const Footer = ({ scroll }) => {
   return (
     <footer className='bg-black text-sm'>
       <div className='container mx-auto px-4 flex justify-between items-start space-y-5 sm:space-y-0 sm:items-center flex-col py-10 sm:py-5 sm:flex-row'>
         {' '}
-        <div className='flex'>
-          <a href='#' className='text-body font-bold flex items-center'>
+        <div onClick={scroll} className='flex hover:cursor-pointer'>
+          <a className='text-body font-bold flex items-center'>
             <img className='mr-3 w-4' src={logo} alt='logo' />
             Gradientology
           </a>

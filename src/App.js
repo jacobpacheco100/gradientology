@@ -25,6 +25,7 @@ function App() {
   // scroll function : for gradients btn | hero...
 
   const main = useRef(null)
+  const top = useRef(null)
 
   const scrollToSection = (elementRef) => {
     window.scrollTo({
@@ -63,7 +64,7 @@ function App() {
   // console.log(saved)
 
   return (
-    <div className='App bg-main-bg overflow-x-hidden '>
+    <div ref={top} className='App bg-main-bg overflow-x-hidden '>
       <div className='z-0'>
         <Navbar toggleSaved={toggleSaved} />
         <Saved
@@ -88,7 +89,7 @@ function App() {
         unSave={unSave}
       />
 
-      <Footer />
+      <Footer scroll={() => scrollToSection(top)} />
     </div>
   )
 }
