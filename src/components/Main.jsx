@@ -27,8 +27,10 @@ const Main = ({ handleSave, unSave }) => {
         <div className='text-center'>
           <h2 className='text-3xl font-bold mb-3'>Gradients</h2>
           <p className='text-body'>
-            <span className='text-blue font-bold'>Currently : 86</span> premade
-            custom gradient meshes
+            <span className='text-blue font-bold'>
+              Currently : {cards.length}
+            </span>{' '}
+            premade custom gradient meshes
           </p>
         </div>
       </section>

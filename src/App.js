@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Saved from './components/Saved'
@@ -20,6 +20,17 @@ function App() {
   }
   function toggleFilter() {
     setFilter((prev) => !prev)
+  }
+
+  // scroll function : for gradients btn | hero...
+
+  const main = useRef(null)
+
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth',
+    })
   }
 
   // saved gradients
@@ -60,16 +71,23 @@ function App() {
           isSave={showSaved}
           savedGradients={saved}
         />
-        <Hero toggleAlert={toggleAlert} isAlert={alert} />
+        <Hero
+          toggleAlert={toggleAlert}
+          isAlert={alert}
+          scroll={() => scrollToSection(main)}
+        />
       </div>
 
       {/* Main */}
+
+      <div ref={main}></div>
       <Main
         isFilter={filter}
         toggleFilter={toggleFilter}
         handleSave={save}
         unSave={unSave}
       />
+
       <Footer />
     </div>
   )

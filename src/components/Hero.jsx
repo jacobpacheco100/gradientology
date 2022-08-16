@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineFrown, AiOutlineCloseCircle } from 'react-icons/ai'
 
-const Hero = ({ toggleAlert, isAlert }) => {
+const Hero = ({ toggleAlert, isAlert, scroll }) => {
   return (
     <div className=' container mx-auto pt-20 md:pt-40 pb-40 md:pb-80  max-w-screen-lg '>
       <h1 className='text-6xl font-bold text-center max-w-4xl mx-auto '>
@@ -15,7 +15,10 @@ const Hero = ({ toggleAlert, isAlert }) => {
         </a>
       </p>
       <div className='flex-initial space-y-4 sm:space-y-0 text-center sm:space-x-6 sm:mt-7'>
-        <button className=' font-bold bg-black  text-white px-7 h-[50px] rounded-md  mx-auto  hover:bg-blackLight w-[80%] sm:w-auto ease-in duration-100'>
+        <button
+          onClick={scroll}
+          className=' font-bold bg-black  text-white px-7 h-[50px] rounded-md  mx-auto  hover:bg-blackLight w-[80%] sm:w-auto ease-in duration-100'
+        >
           Gradients
         </button>
         <button
