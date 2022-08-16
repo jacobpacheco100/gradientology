@@ -2,13 +2,13 @@
   {
     "id": "0",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/07.-Tidal.jpg",
-    "name": "Cotton Candy",
+    "name": "Purple Banana",
     "colors": ["gray", "gray", "gray"]
   },
   {
     "id": "1",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/02.-Egg-Sour.jpg",
-    "name": "Cotton Candy",
+    "name": "Cold Vanilla",
     "colors": ["#e064c9", "#fff2b3", "#6144e1"]
   },
   {
@@ -19,20 +19,56 @@
   },
   {
     "id": "3",
-    "gradient": "https://products.ls.graphics/mesh-gradients/images/07.-Tidal.jpg",
-    "name": "Cotton Candy",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/35.-Ronchi.jpg",
+    "name": "Fire",
     "colors": ["gray", "gray", "gray"]
   },
   {
     "id": "4",
-    "gradient": "https://products.ls.graphics/mesh-gradients/images/02.-Egg-Sour.jpg",
-    "name": "Cotton Candy",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/41.-Tonys-Pink_1.jpg",
+    "name": "Summer",
     "colors": ["#e064c9", "#fff2b3", "#6144e1"]
   },
   {
     "id": "5",
-    "gradient": "https://products.ls.graphics/mesh-gradients/images/03.-Snowy-Mint_1.jpg",
-    "name": "Snowy Mint",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/43.-Harvest-Gold.jpg",
+    "name": "Harvest",
+    "colors": ["gray", "gray", "gray"]
+  },
+  {
+    "id": "6",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/34.-Mauve_1.jpg",
+    "name": "Sunray Ice",
+    "colors": ["gray", "gray", "gray"]
+  },
+  {
+    "id": "7",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/38.-Sky-Blue_1.jpg",
+    "name": "Future Blue",
+    "colors": ["gray", "gray", "gray"]
+  },
+  {
+    "id": "8",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/32.-Banana-Mania.jpg",
+    "name": "Autumn Rise",
+    "colors": ["gray", "gray", "gray"]
+  },
+  {
+    "id": "9",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/36.-Pale-Chestnut.jpg",
+    "name": "Easter",
+    "colors": ["gray", "gray", "gray"]
+  },
+  {
+    "id": "10",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/28.-Deco.jpg",
+    "name": "Northern Lights",
+    "colors": ["gray", "gray", "gray"]
+  },
+  {
+    "id": "11",
+    "gradient": "https://products.ls.graphics/mesh-gradients/images/13.-Pale-Violet-Red_1.jpg",
+    "name": "Murica",
     "colors": ["gray", "gray", "gray"]
   }
 ]

@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai'
 import ColorSwatch from './ColorSwatch'
 import GradientCard from './GradientCard'
 import data from '../gradientCardsData.json'
 
 const Main = ({ handleSave, unSave }) => {
-  const cards = data.map((card) => {
+  const [showAllCards, setShowAllCards] = useState(false)
+
+  const dataFirst = data.slice(0, 6)
+
+  const cardsFirst = dataFirst.map((card) => {
+    return (
+      <GradientCard
+        key={card.id}
+        gradient={card.gradient}
+        name={card.name}
+        color1={card.colors[0]}
+        color2={card.colors[1]}
+        color3={card.colors[2]}
+        handleSave={handleSave}
+        unSave={unSave}
+        id={card.id}
+      />
+    )
+  })
+
+  const cardsAll = data.map((card) => {
     return (
       <GradientCard
         key={card.id}
@@ -28,7 +48,7 @@ const Main = ({ handleSave, unSave }) => {
           <h2 className='text-3xl font-bold mb-3'>Gradients</h2>
           <p className='text-body'>
             <span className='text-blue font-bold'>
-              Currently : {cards.length}
+              Currently : {cardsAll.length}
             </span>{' '}
             premade custom gradient meshes
           </p>
@@ -36,12 +56,17 @@ const Main = ({ handleSave, unSave }) => {
       </section>
 
       <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10'>
-        {cards}
+        {showAllCards ? cardsAll : cardsFirst}
       </section>
 
-      <button className='block mx-auto mt-20 font-bold bg-black  text-white px-7 h-[50px] rounded-md  hover:bg-blackLight '>
-        Load More
-      </button>
+      {!showAllCards && (
+        <button
+          onClick={() => setShowAllCards(true)}
+          className='block mx-auto mt-20 font-bold bg-black  text-white px-7 h-[50px] rounded-md  hover:bg-blackLight '
+        >
+          Load More
+        </button>
+      )}
     </main>
   )
 }
