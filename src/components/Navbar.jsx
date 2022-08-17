@@ -17,7 +17,7 @@ const Navbar = ({ toggleSaved }) => {
           onClick={toggleSaved}
           className='border-solid border-black border-1 bg-main-bg h-[50px] px-5 rounded-lg flex items-center hover:font-bold hover:bg-red hover:text-white hover:border-red ease-in duration-100'
         >
-          <span className='mr-2'>Saved</span> <AiOutlineHeart />
+          <span className='mr-2 hidden sm:block'>Saved</span> <AiOutlineHeart />
         </button>
 
         <a

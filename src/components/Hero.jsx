@@ -3,7 +3,7 @@ import { AiOutlineFrown, AiOutlineCloseCircle } from 'react-icons/ai'
 
 const Hero = ({ toggleAlert, isAlert, scroll }) => {
   return (
-    <div className=' container mx-auto pt-20 md:pt-40 pb-40 md:pb-80  max-w-screen-lg '>
+    <div className='px-5 container mx-auto pt-20 md:pt-40 pb-40 md:pb-80  max-w-screen-lg '>
       <h1 className='text-6xl font-bold text-center max-w-4xl mx-auto '>
         Unique custom gradients for your all modern designs
       </h1>
@@ -48,7 +48,10 @@ const Hero = ({ toggleAlert, isAlert, scroll }) => {
           Is currently in developement. In the meantime i highly recomend this
           website
         </p>
-        <a className='font-bold text-blue-300 text-blue' href='#'>
+        <a
+          className='font-bold text-blue-300 text-blue'
+          href='https://meshgradient.com/'
+        >
           https://meshgradient.com/
         </a>
       </div>
