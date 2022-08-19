@@ -4,7 +4,7 @@ import SavedGradientCard from './SavedGradientCard'
 
 // placeholder
 
-const Saved = ({ toggleSaved, isSave, savedGradients }) => {
+const Saved = ({ toggleSaved, isSave, savedGradients, unSave }) => {
   const saved = savedGradients.map((card) => {
     return (
       <SavedGradientCard
@@ -13,6 +13,8 @@ const Saved = ({ toggleSaved, isSave, savedGradients }) => {
         color1={card.colors[0]}
         color2={card.colors[1]}
         color3={card.colors[2]}
+        id={card.id}
+        unSave={unSave}
       />
     )
   })
@@ -35,6 +37,10 @@ const Saved = ({ toggleSaved, isSave, savedGradients }) => {
       </div>
 
       {/* saved gradients... */}
+
+      <p className='px-4 md:px-10 text-body font-medium'>
+        {!saved.length ? 'Looks like you have no saved gradients...' : ''}
+      </p>
       <div className='px-10 w-full grid grid-cols-2 gap-7'>{saved}</div>
     </aside>
   )

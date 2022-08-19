@@ -1,8 +1,26 @@
 import React from 'react'
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
+import { TbTrashX } from 'react-icons/tb'
 
-const SavedGradientCard = ({ gradient, name, color1, color2, color3 }) => {
+const SavedGradientCard = ({
+  gradient,
+  name,
+  color1,
+  color2,
+  color3,
+  id,
+  unSave,
+}) => {
   return (
-    <div className=' shadow-md rounded-b-md '>
+    <div className=' shadow-md rounded-b-md  relative'>
+      {/* save button */}
+      <button
+        onClick={() => unSave(id)}
+        className='absolute z-10 top-4 right-4 p-2 bg-white rounded-full shadow-md hover:text-white hover:bg-red '
+      >
+        <TbTrashX />
+      </button>
+
       {/* gradient img */}
       <div className='w-full h-40 overflow-hidden relative '>
         <a

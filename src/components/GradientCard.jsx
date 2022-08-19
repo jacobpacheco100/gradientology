@@ -11,6 +11,7 @@ const GradientCard = ({
   handleSave,
   unSave,
   id,
+  savedGradients,
 }) => {
   const [isSaved, setIsSaved] = useState(false)
 
@@ -26,10 +27,10 @@ const GradientCard = ({
     <div className=' shadow-md rounded-b-xl w-full relative group'>
       {/* save button */}
       <button
-        // onClick={() => handleSave(`${id}`)}
-        // setIsSaved((prev) => !prev
         onClick={() => click(id)}
-        className='absolute z-10 top-4 right-4 p-2 bg-white rounded-full text-red shadow-md hidden group-hover:block'
+        className={`absolute z-10 top-4 right-4 p-2 bg-white rounded-full text-red shadow-md  group-hover:block ${
+          isSaved ? 'block' : 'hidden'
+        }`}
       >
         {isSaved ? <AiFillHeart /> : <AiOutlineHeart />}
       </button>

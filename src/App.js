@@ -36,32 +36,23 @@ function App() {
 
   // saved gradients
 
-  const [saved, setSaved] = useState([
-    {
-      id: '2',
-      gradient:
-        'https://products.ls.graphics/mesh-gradients/images/03.-Snowy-Mint_1.jpg',
-      name: 'Snowy Mint',
-      colors: ['gray', 'gray', 'gray'],
-    },
-  ])
+  const [saved, setSaved] = useState([])
+
+  // save a gradient
 
   function save(id) {
     let card
     card = data[id]
     setSaved((prev) => [...prev, card])
-
-    // if id == id of any object in data => do nothing, else card = data[id]
   }
 
   // delete from saved...
+
   function unSave(id) {
     setSaved((prev) => {
       return prev.filter((save) => save.id !== id)
     })
   }
-
-  // console.log(saved)
 
   return (
     <div ref={top} className='App bg-main-bg overflow-x-hidden '>
@@ -71,6 +62,7 @@ function App() {
           toggleSaved={toggleSaved}
           isSave={showSaved}
           savedGradients={saved}
+          unSave={unSave}
         />
         <Hero
           toggleAlert={toggleAlert}
@@ -83,6 +75,7 @@ function App() {
 
       <div ref={main}></div>
       <Main
+        savedGradients={saved}
         isFilter={filter}
         toggleFilter={toggleFilter}
         handleSave={save}

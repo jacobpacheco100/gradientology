@@ -4,7 +4,7 @@ import ColorSwatch from './ColorSwatch'
 import GradientCard from './GradientCard'
 import data from '../gradientCardsData.json'
 
-const Main = ({ handleSave, unSave }) => {
+const Main = ({ handleSave, unSave, savedGradients }) => {
   const [showAllCards, setShowAllCards] = useState(false)
 
   const dataFirst = data.slice(0, 6)
@@ -21,6 +21,7 @@ const Main = ({ handleSave, unSave }) => {
         handleSave={handleSave}
         unSave={unSave}
         id={card.id}
+        savedGradients={savedGradients}
       />
     )
   })
