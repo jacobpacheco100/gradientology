@@ -3,72 +3,72 @@
     "id": "0",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/07.-Tidal.jpg",
     "name": "Purple Banana",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#e1619c", "#f99b6a", "#dff68d"]
   },
   {
     "id": "1",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/02.-Egg-Sour.jpg",
     "name": "Cold Vanilla",
-    "colors": ["#e064c9", "#fff2b3", "#6144e1"]
+    "colors": ["#ffefb2", "#bde3f9", "#6f3edd"]
   },
   {
     "id": "2",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/03.-Snowy-Mint_1.jpg",
     "name": "Snowy Mint",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#97d7f8", "#c5f5c6", "#5576cd"]
   },
   {
     "id": "3",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/35.-Ronchi.jpg",
     "name": "Fire",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#ff5f64", "#ff9337", "#feec58"]
   },
   {
     "id": "4",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/41.-Tonys-Pink_1.jpg",
     "name": "Summer",
-    "colors": ["#e064c9", "#fff2b3", "#6144e1"]
+    "colors": ["#fead61", "#81c2f5", "#f4f9c6"]
   },
   {
     "id": "5",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/43.-Harvest-Gold.jpg",
     "name": "Harvest",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#a6e667", "#edf983", "#edf7af"]
   },
   {
     "id": "6",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/34.-Mauve_1.jpg",
     "name": "Sunray Ice",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#e3a9fd", "#6292f6", "#52c6f3"]
   },
   {
     "id": "7",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/38.-Sky-Blue_1.jpg",
     "name": "Future Blue",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#cda9c0", "#7ba7f3", "#44dff6"]
   },
   {
     "id": "8",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/32.-Banana-Mania.jpg",
     "name": "Autumn Rise",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#fb548a", "#fffcca", "#774bda"]
   },
   {
     "id": "9",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/36.-Pale-Chestnut.jpg",
     "name": "Easter",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#ffdccc", "#b692de", "#94c5f4"]
   },
   {
     "id": "10",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/28.-Deco.jpg",
     "name": "Northern Lights",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#72a4eb", "#b7a8e3", "#cbf656"]
   },
   {
     "id": "11",
     "gradient": "https://products.ls.graphics/mesh-gradients/images/13.-Pale-Violet-Red_1.jpg",
     "name": "Murica",
-    "colors": ["gray", "gray", "gray"]
+    "colors": ["#98d7f8", "#7261d7", "#fd5188"]
   }
 ]

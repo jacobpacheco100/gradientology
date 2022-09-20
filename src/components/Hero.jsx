@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { Context } from './Context'
 import { AiOutlineFrown, AiOutlineCloseCircle } from 'react-icons/ai'
 
-const Hero = ({ toggleAlert, isAlert, scroll }) => {
+const Hero = ({ scroll }) => {
+  const { alert, setAlert } = useContext(Context)
   return (
     <div className='px-5 container mx-auto pt-20 md:pt-40 pb-40 md:pb-80  max-w-screen-lg '>
       <h1 className='text-6xl font-bold text-center max-w-4xl mx-auto '>
@@ -11,7 +13,7 @@ const Hero = ({ toggleAlert, isAlert, scroll }) => {
         Browse through our vast source of meshes and gradients you can use on
         your porject designs. If your feeling more hands on,
         <a
-          onClick={toggleAlert}
+          onClick={() => setAlert(true)}
           className='font-bold text-orange hover:underline hover:cursor-pointer'
         >
           {' create your own!'}
@@ -25,7 +27,7 @@ const Hero = ({ toggleAlert, isAlert, scroll }) => {
           Gradients
         </button>
         <button
-          onClick={toggleAlert}
+          onClick={() => setAlert(true)}
           className='font-bold border-2 border-solid border-black text-black px-7 h-[50px] rounded-md  mx-auto  hover:bg-blue w-[80%] sm:w-auto ease-in duration-100'
         >
           Build Your Own
@@ -36,11 +38,11 @@ const Hero = ({ toggleAlert, isAlert, scroll }) => {
 
       <div
         className={`w-[90%] max-w-[561px] fixed z-10  flex flex-col items-center bg-white  left-1/2 transform -translate-x-1/2 py-10 rounded-lg shadow-md ease-in-out duration-300
-        ${isAlert ? ' translate-y-[-450px]' : ' translate-y-[-1400px]'}`}
+        ${alert ? ' translate-y-[-450px]' : ' translate-y-[-1400px]'}`}
       >
         <AiOutlineFrown className='text-4xl mb-4' />
         <AiOutlineCloseCircle
-          onClick={toggleAlert}
+          onClick={() => setAlert(false)}
           className='text-2xl text-red-500 absolute top-4 right-4 hover:cursor-pointer'
         />
         <h3 className='font-bold text-lg'>" Build Your Own "</h3>

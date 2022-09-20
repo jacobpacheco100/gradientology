@@ -5,28 +5,13 @@ import Saved from './components/Saved'
 import Hero from './components/Hero'
 import Main from './components/Main'
 import Footer from './components/Footer'
-import data from './gradientCardsData.json'
+
+import { Context } from './components/Context'
 
 function App() {
-  const [showSaved, setShowSaved] = useState(false)
-  const [alert, setAlert] = useState(false)
-  const [filter, setFilter] = useState(false)
-
-  function toggleSaved() {
-    setShowSaved((prev) => !prev)
-  }
-  function toggleAlert() {
-    setAlert((prev) => !prev)
-  }
-  function toggleFilter() {
-    setFilter((prev) => !prev)
-  }
-
   // scroll function : for gradients btn | hero...
-
   const main = useRef(null)
   const top = useRef(null)
-
   const scrollToSection = (elementRef) => {
     window.scrollTo({
       top: elementRef.current.offsetTop,
@@ -34,106 +19,122 @@ function App() {
     })
   }
 
-  // saved gradients
-
-  const [saved, setSaved] = useState([])
-
-  // save a gradient
-
-  function save(id) {
-    let card
-    card = data[id]
-    setSaved((prev) => [...prev, card])
-  }
-
-  // delete from saved...
-
-  function unSave(id) {
-    setSaved((prev) => {
-      return prev.filter((save) => save.id !== id)
-    })
-  }
+  const [gradients, setGradients] = useState([
+    {
+      id: '0',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/07.-Tidal.jpg',
+      name: 'Purple Banana',
+      colors: ['#e1619c', '#f99b6a', '#dff68d'],
+    },
+    {
+      id: '1',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/02.-Egg-Sour.jpg',
+      name: 'Cold Vanilla',
+      colors: ['#ffefb2', '#bde3f9', '#6f3edd'],
+    },
+    {
+      id: '2',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/03.-Snowy-Mint_1.jpg',
+      name: 'Snowy Mint',
+      colors: ['#97d7f8', '#c5f5c6', '#5576cd'],
+    },
+    {
+      id: '3',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/35.-Ronchi.jpg',
+      name: 'Fire',
+      colors: ['#ff5f64', '#ff9337', '#feec58'],
+    },
+    {
+      id: '4',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/41.-Tonys-Pink_1.jpg',
+      name: 'Summer',
+      colors: ['#fead61', '#81c2f5', '#f4f9c6'],
+    },
+    {
+      id: '5',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/43.-Harvest-Gold.jpg',
+      name: 'Harvest',
+      colors: ['#a6e667', '#edf983', '#edf7af'],
+    },
+    {
+      id: '6',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/34.-Mauve_1.jpg',
+      name: 'Sunray Ice',
+      colors: ['#e3a9fd', '#6292f6', '#52c6f3'],
+    },
+    {
+      id: '7',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/38.-Sky-Blue_1.jpg',
+      name: 'Future Blue',
+      colors: ['#cda9c0', '#7ba7f3', '#44dff6'],
+    },
+    {
+      id: '8',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/32.-Banana-Mania.jpg',
+      name: 'Autumn Rise',
+      colors: ['#fb548a', '#fffcca', '#774bda'],
+    },
+    {
+      id: '9',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/36.-Pale-Chestnut.jpg',
+      name: 'Easter',
+      colors: ['#ffdccc', '#b692de', '#94c5f4'],
+    },
+    {
+      id: '10',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/28.-Deco.jpg',
+      name: 'Northern Lights',
+      colors: ['#72a4eb', '#b7a8e3', '#cbf656'],
+    },
+    {
+      id: '11',
+      gradient:
+        'https://products.ls.graphics/mesh-gradients/images/13.-Pale-Violet-Red_1.jpg',
+      name: 'Murica',
+      colors: ['#98d7f8', '#7261d7', '#fd5188'],
+    },
+  ])
+  const [showSaved, setShowSaved] = useState(false)
+  const [alert, setAlert] = useState(false)
 
   return (
     <div ref={top} className='App bg-main-bg overflow-x-hidden '>
-      <div className='z-0'>
-        <Navbar toggleSaved={toggleSaved} />
-        <Saved
-          toggleSaved={toggleSaved}
-          isSave={showSaved}
-          savedGradients={saved}
-          unSave={unSave}
-        />
-        <Hero
-          toggleAlert={toggleAlert}
-          isAlert={alert}
-          scroll={() => scrollToSection(main)}
-        />
-      </div>
+      <Context.Provider
+        value={{
+          showSaved,
+          setShowSaved,
+          alert,
+          setAlert,
+          gradients,
+          setGradients,
+        }}
+      >
+        {/* top */}
+        <div className='z-0'>
+          <Navbar toggleSaved={() => setShowSaved((prev) => !prev)} />
+          <Saved />
+          <Hero scroll={() => scrollToSection(main)} />
+        </div>
 
-      {/* Main */}
-
-      <div ref={main}></div>
-      <Main
-        savedGradients={saved}
-        isFilter={filter}
-        toggleFilter={toggleFilter}
-        handleSave={save}
-        unSave={unSave}
-      />
-
-      <Footer scroll={() => scrollToSection(top)} />
+        {/* Main */}
+        <div ref={main}></div>
+        <Main />
+        {/* footer */}
+        <Footer scroll={() => scrollToSection(top)} />
+      </Context.Provider>
     </div>
   )
 }
 
 export default App
-
-{
-  /* bg gradients : fix */
-}
-
-{
-  /* <div>
-  <div
-    style={{
-      zIndex: '0',
-      position: 'absolute',
-      width: '2823px',
-      height: '1320px',
-      left: '-724px',
-      top: '-1080px',
-      background:
-        'radial-gradient(50% 50% at 50% 50%, #FF9F47 0%, rgba(255, 255, 255, 0) 100%)',
-    }}
-  ></div>
-
-  <div
-    style={{
-      position: 'absolute',
-      width: '2323px',
-      height: '1220px',
-      left: '-1800px',
-      top: '-311px',
-      background:
-        'radial-gradient(50% 50% at 50% 50%, rgba(71, 255, 211, 0.8) 0%, rgba(255, 255, 255, 0) 100%)',
-    }}
-  ></div>
-
-  <div
-    style={{
-      position: 'absolute',
-      width: '1320px',
-      height: '1320px',
-      left: '779px',
-      top: '-786px',
-      background:
-        'radial-gradient(50% 50% at 50% 50%, rgba(240, 71, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%)',
-      opacity: '.6',
-    }}
-  ></div>
-</div> */
-}
-{
-  /* Nav / Hero */
-}

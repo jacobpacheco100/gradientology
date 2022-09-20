@@ -7,20 +7,21 @@ const GradientCard = ({
   color1,
   color2,
   color3,
-
-  handleSave,
+  save,
   unSave,
   id,
   savedGradients,
 }) => {
   const [isSaved, setIsSaved] = useState(false)
 
+  // const result = inventory.find(({ name }) => name === 'cherries')
+
   function click(id) {
     setIsSaved((prev) => !prev)
     if (isSaved) {
       unSave(id)
     } else {
-      handleSave(id)
+      save(id)
     }
   }
   return (

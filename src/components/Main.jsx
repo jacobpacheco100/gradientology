@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { Context } from './Context'
 import { AiOutlineRight } from 'react-icons/ai'
 import ColorSwatch from './ColorSwatch'
 import GradientCard from './GradientCard'
-import data from '../gradientCardsData.json'
 
-const Main = ({ handleSave, unSave, savedGradients }) => {
+const Main = ({ save, unSave, savedGradients }) => {
+  const { gradients, setGradients } = useContext(Context)
   const [showAllCards, setShowAllCards] = useState(false)
 
-  const dataFirst = data.slice(0, 6)
-
-  const cardsFirst = dataFirst.map((card) => {
+  const cardsFirst = gradients.slice(0, 6).map((card) => {
     return (
       <GradientCard
         key={card.id}
@@ -18,7 +17,7 @@ const Main = ({ handleSave, unSave, savedGradients }) => {
         color1={card.colors[0]}
         color2={card.colors[1]}
         color3={card.colors[2]}
-        handleSave={handleSave}
+        save={save}
         unSave={unSave}
         id={card.id}
         savedGradients={savedGradients}
@@ -26,7 +25,7 @@ const Main = ({ handleSave, unSave, savedGradients }) => {
     )
   })
 
-  const cardsAll = data.map((card) => {
+  const cardsAll = gradients.map((card) => {
     return (
       <GradientCard
         key={card.id}
@@ -35,9 +34,10 @@ const Main = ({ handleSave, unSave, savedGradients }) => {
         color1={card.colors[0]}
         color2={card.colors[1]}
         color3={card.colors[2]}
-        handleSave={handleSave}
+        save={save}
         unSave={unSave}
         id={card.id}
+        savedGradients={savedGradients}
       />
     )
   })
