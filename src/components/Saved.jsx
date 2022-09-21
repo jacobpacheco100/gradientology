@@ -5,21 +5,14 @@ import SavedGradientCard from './SavedGradientCard'
 
 // placeholder
 
-const Saved = ({ toggleSaved }) => {
-  const { showSaved, setShowSaved } = useContext(Context)
-  // const saved = savedGradients.map((card) => {
-  //   return (
-  //     <SavedGradientCard
-  //       gradient={card.gradient}
-  //       name={card.name}
-  //       color1={card.colors[0]}
-  //       color2={card.colors[1]}
-  //       color3={card.colors[2]}
-  //       id={card.id}
-  //       unSave={unSave}
-  //     />
-  //   )
-  // })
+const Saved = () => {
+  const { showSaved, setShowSaved, gradients } = useContext(Context)
+
+  const savedList = gradients
+    .filter((card) => card.saved)
+    .map((card) => {
+      return <SavedGradientCard key={card.id} props={card} />
+    })
 
   return (
     <aside
@@ -41,9 +34,9 @@ const Saved = ({ toggleSaved }) => {
       {/* saved gradients... */}
 
       <p className='px-4 md:px-10 text-body font-medium'>
-        {/* {!saved.length ? 'Looks like you have no saved gradients...' : ''} */}
+        {!savedList.length ? 'Looks like you have no saved gradients...' : ''}
       </p>
-      <div className='px-10 w-full grid grid-cols-2 gap-7'></div>
+      <div className='px-10 w-full grid grid-cols-2 gap-7'>{savedList}</div>
     </aside>
   )
 }

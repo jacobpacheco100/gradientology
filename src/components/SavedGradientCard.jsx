@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from './Context'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import { TbTrashX } from 'react-icons/tb'
 
-const SavedGradientCard = ({
-  gradient,
-  name,
-  color1,
-  color2,
-  color3,
-  id,
-  unSave,
-}) => {
+const SavedGradientCard = ({ props }) => {
+  const { gradients, setGradients } = useContext(Context)
+  function unSaveHandler() {
+    const filterUnsaved = gradients.filter((card) => card.id !== props.id)
+    setGradients([
+      {
+        ...props,
+        saved: !props.saved,
+      },
+      ...filterUnsaved,
+    ])
+  }
   return (
     <div className=' shadow-md rounded-b-md  relative'>
       {/* save button */}
       <button
-        onClick={() => unSave(id)}
+        onClick={unSaveHandler}
         className='absolute z-10 top-4 right-4 p-2 bg-white rounded-full shadow-md hover:text-white hover:bg-red '
       >
         <TbTrashX />
@@ -24,11 +28,11 @@ const SavedGradientCard = ({
       {/* gradient img */}
       <div className='w-full h-40 overflow-hidden relative '>
         <a
-          href={gradient}
+          href={props.gradient}
           target='_blank'
           className={`block h-full w-full bg-cover bg-center bg-no-repeat ease-in-out duration-300  hover:scale-125`}
           style={{
-            backgroundImage: `url(${gradient})`,
+            backgroundImage: `url(${props.gradient})`,
             backgroundRepeat: 'no-repeat',
           }}
         ></a>
@@ -36,20 +40,20 @@ const SavedGradientCard = ({
       {/* bottom tab */}
       <div className=' rounded-b-md h-[30px] bg-white flex items-center justify-between px-4 '>
         {/* name */}
-        <h1 className='text-xs text-body font-bold '>{name}</h1>
+        <h1 className='text-xs text-body font-bold '>{props.name}</h1>
         {/* color pallet */}
         <div className='flex space-x-2'>
           <div
             className={`rounded-full h-3 w-3`}
-            style={{ backgroundColor: color1 }}
+            style={{ backgroundColor: props.color1 }}
           ></div>
           <div
             className={`rounded-full h-3 w-3`}
-            style={{ backgroundColor: color2 }}
+            style={{ backgroundColor: props.color2 }}
           ></div>
           <div
             className={`rounded-full h-3 w-3`}
-            style={{ backgroundColor: color3 }}
+            style={{ backgroundColor: props.color3 }}
           ></div>
         </div>
       </div>

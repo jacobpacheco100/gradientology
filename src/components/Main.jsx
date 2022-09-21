@@ -4,42 +4,19 @@ import { AiOutlineRight } from 'react-icons/ai'
 import ColorSwatch from './ColorSwatch'
 import GradientCard from './GradientCard'
 
-const Main = ({ save, unSave, savedGradients }) => {
-  const { gradients, setGradients } = useContext(Context)
+const Main = () => {
+  const { gradients } = useContext(Context)
   const [showAllCards, setShowAllCards] = useState(false)
 
-  const cardsFirst = gradients.slice(0, 6).map((card) => {
-    return (
-      <GradientCard
-        key={card.id}
-        gradient={card.gradient}
-        name={card.name}
-        color1={card.colors[0]}
-        color2={card.colors[1]}
-        color3={card.colors[2]}
-        save={save}
-        unSave={unSave}
-        id={card.id}
-        savedGradients={savedGradients}
-      />
-    )
-  })
+  const cardsFirst = gradients
+    .slice(0, 6)
+    .sort((a, b) => b.saved - a.saved)
+    .map((card) => {
+      return <GradientCard key={card.id} props={card} />
+    })
 
   const cardsAll = gradients.map((card) => {
-    return (
-      <GradientCard
-        key={card.id}
-        gradient={card.gradient}
-        name={card.name}
-        color1={card.colors[0]}
-        color2={card.colors[1]}
-        color3={card.colors[2]}
-        save={save}
-        unSave={unSave}
-        id={card.id}
-        savedGradients={savedGradients}
-      />
-    )
+    return <GradientCard key={card.id} props={card} />
   })
 
   return (
