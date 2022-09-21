@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.left-img {
+  @apply absolute top-[30vh] left-20 hidden xl:block;
+}
+
+.right-img {
+  @apply absolute top-[50vh] right-20 hidden xl:block w-[300px];
+}

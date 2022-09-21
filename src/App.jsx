@@ -8,6 +8,10 @@ import Footer from './components/Footer'
 
 import { Context } from './components/Context'
 
+// images
+import left from './images/hero/left.png'
+import right from './images/hero/right.png'
+
 function App() {
   // scroll function : for gradients btn | hero...
   const main = useRef(null)
@@ -150,6 +154,9 @@ function App() {
           <Navbar toggleSaved={() => setShowSaved((prev) => !prev)} />
           <Saved />
           <Hero scroll={() => scrollToSection(main)} />
+
+          <img className='left-img' src={left} />
+          <img className='right-img' src={right} />
         </div>
 
         {/* Main */}
